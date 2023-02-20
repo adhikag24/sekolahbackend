@@ -2,34 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sekolahbackend.web.app/id/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sekolahbackend.web.app/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://sekolahbackend.web.app/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://sekolahbackend.web.app/de/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="dy"
-                href="https://sekolahbackend.web.app/dy/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="id"
-                href="https://sekolahbackend.web.app/id/categories/"
-                />
+    <loc>https://sekolahbackend.web.app/id/blog/</loc>
+    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/golang/</loc>
+    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/</loc>
+    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -57,6 +37,7 @@
                 />
   </url><url>
     <loc>https://sekolahbackend.web.app/id/tags/</loc>
+    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -81,6 +62,69 @@
                 rel="alternate"
                 hreflang="id"
                 href="https://sekolahbackend.web.app/id/tags/"
+                />
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/04-variable/</loc>
+    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/03-hello-world-golang/</loc>
+    <lastmod>2023-02-19T22:01:03+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/code-editor/</loc>
+    <lastmod>2023-02-18T14:05:37+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/02-instalasi-editor/</loc>
+    <lastmod>2023-02-18T14:05:37+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/01-setup-go-module/</loc>
+    <lastmod>2023-02-18T13:28:53+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/00-instalasi-golang/</loc>
+    <lastmod>2023-02-16T21:28:52+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/</loc>
+    <lastmod>2023-02-16T21:24:03+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/css/</loc>
+    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/html/</loc>
+    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/markdown/</loc>
+    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/markdown-syntax/</loc>
+    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/math-typesetting/</loc>
+    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sekolahbackend.web.app/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://sekolahbackend.web.app/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://sekolahbackend.web.app/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="dy"
+                href="https://sekolahbackend.web.app/dy/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="id"
+                href="https://sekolahbackend.web.app/id/categories/"
                 />
   </url>
 </urlset>

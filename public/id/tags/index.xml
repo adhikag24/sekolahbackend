@@ -4,6 +4,52 @@
     <title>Tags on Sekolah Backend</title>
     <link>https://sekolahbackend.web.app/id/tags/</link>
     <description>Recent content in Tags on Sekolah Backend</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://sekolahbackend.web.app/id/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Feb 2023 21:17:19 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>https://sekolahbackend.web.app/id/tags/golang/</link>
+      <pubDate>Mon, 20 Feb 2023 21:17:19 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code editor</title>
+      <link>https://sekolahbackend.web.app/id/tags/code-editor/</link>
+      <pubDate>Sat, 18 Feb 2023 14:05:37 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/tags/code-editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://sekolahbackend.web.app/id/tags/css/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://sekolahbackend.web.app/id/tags/html/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://sekolahbackend.web.app/id/tags/markdown/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

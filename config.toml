@@ -33,7 +33,7 @@ DefaultContentLanguageInSubdir = true
         weight = 4
 
   [languages.id]
-    contentDir = "content/" #Indonesia
+    contentDir = "content/id" #Indonesia
     weight = 2
     languageName = "Indonesia"
     [languages.id.params]

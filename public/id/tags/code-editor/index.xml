@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code editor on Sekolah Backend</title>
+    <link>https://sekolahbackend.web.app/id/tags/code-editor/</link>
+    <description>Recent content in code editor on Sekolah Backend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Feb 2023 14:05:37 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/tags/code-editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Golang: Setup Code Editor</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/02-instalasi-editor/</link>
+      <pubDate>Sat, 18 Feb 2023 14:05:37 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/02-instalasi-editor/</guid>
+      <description>Instalasi Editor Kita bisa pakai Visual Studio Code sebagai code editor, memiliki fitur lengkap, dan juga cukup mudah digunakan. VScode juga memiliki extention yang mendukung bahasa pemrograman Go.
+Kita bisa mendownloadnya disini https://code.visualstudio.com/ Kita install seperti biasa.
+Lalu bisa buka project belajar-golang yang sebelumnya kita buat Ekstetion yang perlu di install Install juga extention golang untuk membantu kita dalam membuat project Go, dengan menginstall extention golang, banyak fitur-fitur yang dapat membantu kita seperti trace error, syntax highlighting, go to definition, code completion, dan masih banyak lagi bisa buka disini untuk lebih lengkapnya https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
