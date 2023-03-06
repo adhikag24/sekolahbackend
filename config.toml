@@ -2,6 +2,9 @@ baseurl = "https://sekolahbackend.web.app/"
 metaDataFormat = "yaml"
 title = "Sekolah Backend"
 theme = "blist"
+paginate = 6
+
+
 
 DefaultContentLanguage = "id"
 DefaultContentLanguageInSubdir = true
@@ -146,6 +149,8 @@ DefaultContentLanguageInSubdir = true
   # Reference: https://tailwindcss.com/docs/customizing-colors
   ascentColor = "bg-blue-100"
 
+  morePostColor= "bg-white"
+
   # The page bundle that is shown on the front page
   frontBundle = "blog"
 
@@ -266,4 +271,6 @@ DefaultContentLanguageInSubdir = true
   [markup.goldmark.renderer]
     # Enable to include inline HTML
     unsafe = true
-
+  [markup.goldmark.extensions]
+    table = true
+  

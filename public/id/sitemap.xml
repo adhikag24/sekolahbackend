@@ -3,13 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sekolahbackend.web.app/id/blog/</loc>
-    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/golang/</loc>
-    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
+    <lastmod>2023-03-05T15:47:57+07:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/</loc>
-    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
+    <lastmod>2023-03-05T15:47:57+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -36,8 +33,17 @@
                 href="https://sekolahbackend.web.app/id/"
                 />
   </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/11-array/</loc>
+    <lastmod>2023-03-05T15:47:57+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/10-perulangan/</loc>
+    <lastmod>2023-03-04T15:17:37+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/tags/golang/</loc>
+    <lastmod>2023-03-01T22:06:06+07:00</lastmod>
+  </url><url>
     <loc>https://sekolahbackend.web.app/id/tags/</loc>
-    <lastmod>2023-02-20T21:17:19+07:00</lastmod>
+    <lastmod>2023-03-01T22:06:06+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,6 +70,21 @@
                 href="https://sekolahbackend.web.app/id/tags/"
                 />
   </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/09-kondisi/</loc>
+    <lastmod>2023-03-01T22:06:06+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/08-operator/</loc>
+    <lastmod>2023-02-27T01:22:24+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/07-konstanta/</loc>
+    <lastmod>2023-02-25T01:47:38+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/06-komentar/</loc>
+    <lastmod>2023-02-25T00:59:12+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/05-tipe-data/</loc>
+    <lastmod>2023-02-22T22:34:54+07:00</lastmod>
+  </url><url>
     <loc>https://sekolahbackend.web.app/id/blog/golang/04-variable/</loc>
     <lastmod>2023-02-20T21:17:19+07:00</lastmod>
   </url><url>
@@ -83,22 +104,7 @@
     <lastmod>2023-02-16T21:28:52+07:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/blog/golang/</loc>
-    <lastmod>2023-02-16T21:24:03+07:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/css/</loc>
-    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/html/</loc>
-    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/markdown/</loc>
-    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/markdown-syntax/</loc>
-    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/math-typesetting/</loc>
-    <lastmod>2021-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/categories/</loc>
     <xhtml:link

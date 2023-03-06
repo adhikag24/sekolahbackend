@@ -13,11 +13,8 @@ description: "Mengenal Variable pada Golang dan bagaimana cara menggunakannya"
 Dalam go ada beberapa cara untuk deklarasi variable, ada yang memakai tipe datanya, ada juga yang tidak.
 
 ### Deklarasi dengan tipe data
-Dalam go kita bisa deklasari variable dengan keyword var, dengan format seperti ini <mark style="background-color:#1f2937; color:#e5e7eb">var <nama_variable> <tipe_data></mark>, seperti ini:
-```golang
-var murid string
-```
-Berikut contoh kodenya:
+Dalam go kita bisa deklasari variable dengan keyword {{< singlelinecodeblock text="var" >}}, dengan format seperti ini {{< singlelinecodeblock text="var <nama_variable> <tipe_data>" >}}
+dan, berikut contoh kodenya:
 ```golang
 package main
 

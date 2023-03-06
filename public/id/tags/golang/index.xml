@@ -5,7 +5,63 @@
     <link>https://sekolahbackend.web.app/id/tags/golang/</link>
     <description>Recent content in golang on Sekolah Backend</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Feb 2023 21:17:19 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 22:06:06 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Golang: Kondisi</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/09-kondisi/</link>
+      <pubDate>Wed, 01 Mar 2023 22:06:06 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/09-kondisi/</guid>
+      <description>Kondisi Kondisi pada pemrograman di gunakan untuk mengatur flow dari sebuah program, sama saja dengan pengambilan keputusan pada dunia nyata, misalnya saat kita puasa kita di perbolehkan makan setelah jam tertentu, nah jam tertentu inilah sebuah kondisi yang menentukan kita boleh makan atau tidak. Sama juga dengan pengambilan keputusan pada sebuah program, sebuah kode dieksekusi ketika kondisi yang diberikan terpenuhi. Ini biasa juga di sebut sebagai Control flow statements.
+Go mempunyai 2 macam keyword untuk memilih kondisi, yakni:</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Operator</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/08-operator/</link>
+      <pubDate>Mon, 27 Feb 2023 01:22:24 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/08-operator/</guid>
+      <description>Operator Dalam istilah komputer, operator adalah sebuah simbol yang melakukan operasi pada value atau variable.
+Contohnya operator &amp;#43; melakukan pertambahan pada 2 value
+Go menyediakan berbagai operator yang dapat kita kategorikan sebagai berikut:
+Operator Aritmatika Operator Perbandingan Operator Logika Operator Aritmatika Operator Aritmatika digunakan untuk melakukan operasi bilangan seperti penambahan, pengurangan, perkalian, pembagian, dsb
+Berikut table operator aritmatika pada Go:
+Operator Deskripsi + (Addition) Pertambahan - (Subtraction) Pengurangan * (Multiplication) Perkalian / (Division) Pembagian % (Modulo Division) Sisa Bagi Berikut contoh kodenya:</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Konstanta</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/07-konstanta/</link>
+      <pubDate>Sat, 25 Feb 2023 01:47:38 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/07-konstanta/</guid>
+      <description>Konstanta Konstanta adalah nilai tetap yang tidak bisa diubah, itu menurut wikipedia ya hehe.
+Cara mendeklarasi konstanta (selanjutnya akan di sebut sebagai const) pada golang sama dengan deklarasi variable tapi dengan keyword const
+Const dapat di deklarasi dengan beberapa tipe data seperti char, string, boolean dan numerin (integer dan float)
+Const harus di declare sebelum program jalan, contoh program dibawah adalah deklarasi const setelah program jalan yang akan menghasilkan error</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Komentar</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/06-komentar/</link>
+      <pubDate>Sat, 25 Feb 2023 00:59:12 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/06-komentar/</guid>
+      <description>Komentar Hampir semua bahasa pemrograman memiliki sintaks untuk menambahkan komentar ke kode, dan tentu saja Go juga mempunyainya. Komentar adalah baris dalam program yang menjelaskan dalam bahasa manusia bagaimana kode bekerja atau mengapa ditulis seperti itu.
+Komentar itu diabaikan oleh kompiler, compiler tidak akan mengkompile komentar. Komentar menambahkan informarsi berharga yang membantu kolaborator / programmer lain atau diri kita di masa depan untuk memahami kode biar kode lebih mudah di kelola dan maintain.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Tipe Data</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/05-tipe-data/</link>
+      <pubDate>Wed, 22 Feb 2023 22:34:54 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/05-tipe-data/</guid>
+      <description>Tipe Data Tipe data adalah cara kita mengklasifikasikan jenis variable, karna dengan tipe data kita memberi tahu komputer jenis data yang digunakan untuk sebuah variable, Go mempunyai 3 tipe data dasar:
+bool: merepresentasikan bilai boolean, nilainya hanya aja 2, antara true atau false Numeric: merepresentasikan nilai dalam bentuk angka, yaitu integer, dan juga float (untuk decimal) string: merepresentasikan nilai dalam bentuk string string itu bisa dibilan text biasa dengan ciri ada titik 2 di awal dan di akhir seperti ini &amp;quot;ini string&amp;quot; boolean Tipe data boolean dapat di deklarasi dengan syntax bool tipe boolean ini hanya bisa menerima 2 nilai true atau false, dan setiap kita inisiali variable boolean defaultnya adalah false</description>
+    </item>
+    
     <item>
       <title>Tutorial Golang: Variable</title>
       <link>https://sekolahbackend.web.app/id/blog/golang/04-variable/</link>
@@ -13,8 +69,7 @@
       
       <guid>https://sekolahbackend.web.app/id/blog/golang/04-variable/</guid>
       <description>Variable Dalam go ada beberapa cara untuk deklarasi variable, ada yang memakai tipe datanya, ada juga yang tidak.
-Deklarasi dengan tipe data Dalam go kita bisa deklasari variable dengan keyword var, dengan format seperti ini var &amp;lt;nama_variable&amp;gt; &amp;lt;tipe_data&amp;gt;, seperti ini:
-var murid string Berikut contoh kodenya:
+Deklarasi dengan tipe data Dalam go kita bisa deklasari variable dengan keyword var, dengan format seperti ini var &amp;lt;nama_variable&amp;gt; &amp;lt;tipe_data&amp;gt; dan, berikut contoh kodenya:
 package main import &amp;#34;fmt&amp;#34; func main() { var murid string murid = &amp;#34;Budi&amp;#34; fmt.Println(murid) } Dan ini hasilnya ketika program dijalankan: Deklarasi variable dengan tipe data juga bisa sekaligus loh, seperti ini</description>
     </item>
     
