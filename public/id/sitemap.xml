@@ -3,10 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sekolahbackend.web.app/id/blog/</loc>
-    <lastmod>2023-03-05T15:47:57+07:00</lastmod>
+    <lastmod>2023-03-30T20:55:34+07:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/</loc>
-    <lastmod>2023-03-05T15:47:57+07:00</lastmod>
+    <lastmod>2023-03-30T20:55:34+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -32,6 +32,33 @@
                 hreflang="id"
                 href="https://sekolahbackend.web.app/id/"
                 />
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/20-export-unexport/</loc>
+    <lastmod>2023-03-30T20:55:34+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/19-method/</loc>
+    <lastmod>2023-03-28T15:42:33+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/18-struct/</loc>
+    <lastmod>2023-03-27T14:45:37+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/17-pointer/</loc>
+    <lastmod>2023-03-26T15:24:31+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/16-closure/</loc>
+    <lastmod>2023-03-24T16:37:28+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/15-variadic-function/</loc>
+    <lastmod>2023-03-20T22:24:21+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/14-function/</loc>
+    <lastmod>2023-03-14T22:16:40+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/13-slice/</loc>
+    <lastmod>2023-03-10T12:20:37+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/blog/golang/12-map/</loc>
+    <lastmod>2023-03-06T22:41:34+07:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/blog/golang/11-array/</loc>
     <lastmod>2023-03-05T15:47:57+07:00</lastmod>
@@ -105,6 +132,12 @@
   </url><url>
     <loc>https://sekolahbackend.web.app/id/blog/golang/</loc>
     <lastmod>2023-02-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/page/</loc>
+    <lastmod>2021-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.web.app/id/page/about/</loc>
+    <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sekolahbackend.web.app/id/categories/</loc>
     <xhtml:link

@@ -1,6 +1,6 @@
 ---
 author: Katheryn Fox
-title: About Me
+title: Sekolah Backend
 date: 2021-07-15
 description:
 keywords: ["about-us", "about-hugo", "contact"]

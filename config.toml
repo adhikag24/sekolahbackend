@@ -3,6 +3,8 @@ metaDataFormat = "yaml"
 title = "Sekolah Backend"
 theme = "blist"
 paginate = 6
+disqusShortname = "sekolahbackend"
+
 
 
 
@@ -16,7 +18,7 @@ DefaultContentLanguageInSubdir = true
     [languages.en.params]
       introTitle = "Sekolah Backend"
       introSubtitle = "Tempat belajar seputar backend dengan lengkap dari dasar sampai mahir dengan tutorial yang mudah dipahami."
-      introPhoto = "/software-integration.svg"
+      introPhoto = "/images/software-integration.svg"
       logo = "/blist-logo.png"
     [[languages.en.menu.main]]
         name = "Blog"
@@ -42,9 +44,9 @@ DefaultContentLanguageInSubdir = true
     [languages.id.params]
       introTitle = "Sekolah Backend"
       introSubtitle = "Tempat belajar seputar backend dengan lengkap dari dasar sampai mahir dengan tutorial yang mudah dipahami."
-      introPhoto = "/software-integration.svg"
+      introPhoto = "/images/software-integration.svg"
     [[languages.id.menu.main]]
-        name = "Blog"
+        name = "Semua Kelas"
         url = "blog"
         weight = 1
 
@@ -52,16 +54,6 @@ DefaultContentLanguageInSubdir = true
         name = "About"
         url = "page/about/"
         weight = 2
-
-    [[languages.id.menu.main]]
-        name = "Categories"
-        url = "categories"
-        weight = 3
-
-    [[languages.id.menu.main]]
-        name = "Top Post"
-        url = "/en/blog/emoji-support/"
-        weight = 4
 
 
   [languages.de]
@@ -147,7 +139,7 @@ DefaultContentLanguageInSubdir = true
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
   # Reference: https://tailwindcss.com/docs/customizing-colors
-  ascentColor = "bg-blue-100"
+  ascentColor = "bg-blue-200"
 
   morePostColor= "bg-white"
 
@@ -175,7 +167,9 @@ DefaultContentLanguageInSubdir = true
 [params.comments]
   # Supports disqus, giscus and utterances
   # Check hugo docs for setting up disqus
-  system = "giscus"
+  system = "disqus"
+
+  disqusShortname = "sekolahbackend"
 
   # Options for giscus, exclude hyphens
   repo = ""

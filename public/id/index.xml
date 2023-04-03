@@ -5,7 +5,121 @@
     <link>https://sekolahbackend.web.app/id/</link>
     <description>Recent content on Sekolah Backend</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Mar 2023 15:47:57 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 20:55:34 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Golang: Public and Private</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/20-export-unexport/</link>
+      <pubDate>Thu, 30 Mar 2023 20:55:34 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/20-export-unexport/</guid>
+      <description>Package Sebelum belajar apa itu Public dan Private pada Go, ada baiknya kita memahami apa itu Package pada golang.
+Di Go, package adalah cara untuk mengatur file source kode Go agar saling terikat.
+Setiap program Go terdiri dari satu atau lebih package, dengan satu paket ditetapkan sebagai package utama.
+Package utama adalah pintu masuk program dan berisi fungsi main() yang dijalankan pertama kali saat program dijalankan.
+Sebuah package juga dapat digunakan oleh package lain dengan mengimpornya.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Method</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/19-method/</link>
+      <pubDate>Tue, 28 Mar 2023 15:42:33 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/19-method/</guid>
+      <description>Method Dalam Go, method sama dengan function, bedanya method memiliki receiver dan hanya dapat dipanggil melalui object / receivernya.
+Berikut contoh syntax untuk membuat method pada Go:
+func (r Receiver) namaFunc(arg int) string { return &amp;#34;&amp;#34; } Lalu untuk memanggilnya, kita dapat melakukan seperti ini:
+result := r.namaFunc(arg) Receiver Receiver ini bisa dibilang pemilik dari sebuah method, ketika method dipanggil method akan memiliki nilai dari receivernya.
+Begini contohnya:
+type Murid struct { nama string kelas string umur int } func (m Murid) getNama() string { return m.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Struct</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/18-struct/</link>
+      <pubDate>Mon, 27 Mar 2023 14:45:37 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/18-struct/</guid>
+      <description>Struct Struct pada golang bisa dibilang sama dengan class pada bahasa pemrograman lain.
+Struct berguna untuk mengelompokkan data bersama untuk membentuk kelompok data yang baru.
+Inisialiasi struct Untuk inisialisasi struct, cukup dengan type Murid struct{}. Dengan berikut kita sudah membuat struct kosong bernama Murid.
+Berikut contoh inisialisasi struct pada Golang:
+type Murid struct { nama string kelas string umur int } Contoh diatas kita berhasil membuat struct Murid dengan attribute nama, kelas dan umur.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Pointer</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/17-pointer/</link>
+      <pubDate>Sun, 26 Mar 2023 15:24:31 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/17-pointer/</guid>
+      <description>Pointer Bahasa pemrograman Go memiliki pointer, mungkin buat yang pernah belajar bahasa C dan C++ ga asing lagi ya dengan namanya pointer.
+Pointer itu fungsinya untuk menampung memory address dari sebuah value / variable.
+Variable dan Pointer itu 2 hal yang berbeda, walau cara deklarasinya mirip.
+Keuntungan pointer kita dapat menyimpan value nil
+Inisialisasi Pointer Cara inisialisasi pointer sama dengan inisialisasi variable pada umumnya, hanya saja untuk pointer ditandai dengan symbol * sebelum penulisan tipe data.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Closure</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/16-closure/</link>
+      <pubDate>Fri, 24 Mar 2023 16:37:28 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/16-closure/</guid>
+      <description>Anonymus Function Sebelum memahami Closure, ada baiknya kita belajar apa itu anonymus function.
+Anonymus function adalah function tanpa nama, anonymus function harus berada didalam function lainnya, tidak dapat menjadi function sendiri.
+Berikut contoh anonymus function pada Golang:
+func main() { //this is anonymus function func(message string) { fmt.Println(message) }(&amp;#34;This is anonymus function!&amp;#34;) } Berikut hasil eksekusinya: Anonymus function sama saja dengan function biasa, hanya saja tidak memiliki nama. Anonymus function juga langsung dieksekusi setelah di definisikan.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Variadic Function</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/15-variadic-function/</link>
+      <pubDate>Mon, 20 Mar 2023 22:24:21 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/15-variadic-function/</guid>
+      <description>Variadic Function Function variadic adalah function yang dapat menerima banyak argument sekaligus. Bukan berarti kita harus mendefine banyak parameter juga, dalam variadic function kita cukup mendefinisikan 1 parameter tapi saat definisi parameter kita harus menambahkan dengan symbol variadic ... sebelum tipe data.
+Berikut contohnya:
+func sum(nums ...int) int { return -1 } Pemakaian parameter Variadic function Cara pemakaian parameter variadic sama dengan array, jadi secara tidak langsung parameter nums dicontoh atas, adalah array of integer</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Function</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/14-function/</link>
+      <pubDate>Tue, 14 Mar 2023 22:16:40 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/14-function/</guid>
+      <description>Function Function adalah cara kita membuat sebuah blok kode untuk menjalankan tugas secara spesifik. Misal dalam program kita, di butuhkan kode untuk menambahkan 2 angka, daripada kita menulis kodenya berulang2 lebih baik kita membuat fungsinya.
+Dalam Go kita dapat membuat function dengan keyword func.
+Membuat function pada Golang Berikut contoh pembuatan function pada Go:
+func sum(num1 int, num2 int) int { return num1 + num2 } Penjelasan:
+sum adalah nama function num1 dan num2 adalah parameter dengan tipe data int yang digunakan di dalam function int setelah tutup kurung, adalah tipe data yang akan di kembalikan function Contoh pemakaian function sum:</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Slice</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/13-slice/</link>
+      <pubDate>Fri, 10 Mar 2023 12:20:37 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/13-slice/</guid>
+      <description>SLice Slice sama dengan array, untuk menyimpan banyak value di dalam 1 variable. Tapi beda dengan array slice lebih powerful dan flexible dari pada array. Slice dapat menyesuaikan sizenya, sesuai jumlah data, tidak fixed seperti array.
+Inisialisasi Slice Dalam Go kita dapat inisialiasi array dengan syntax []data_type{value}, untuk mengakses slice juga sama dengan array kita dapat menggunakan varArray[num_index].
+Berikut contoh slice pada Go:
+mySlice := []string{&amp;#34;Pisang&amp;#34;, &amp;#34;Anggur&amp;#34;, &amp;#34;Mangga&amp;#34;, &amp;#34;Jeruk&amp;#34;} fmt.Println(mySlice) //[Pisang Anggur Mangga Jeruk] fmt.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Golang: Map</title>
+      <link>https://sekolahbackend.web.app/id/blog/golang/12-map/</link>
+      <pubDate>Mon, 06 Mar 2023 22:41:34 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/blog/golang/12-map/</guid>
+      <description>Map Map adalah key-value data struktur, mungkin di bahasa pemrograman lain orang biasa memanggilnya hash map atau dictionary
+Dalam golang kita dapat menginisialisasi map kosong dengan keyword make(map[key-type]val-type)
+Kita juga dapat sekaligus menyimpan banyak value dalam sebuah map. Kita dapat menyimpan value baru di map dengan syntax mapVar[new-key] = new-val.
+Berikut contoh kode penerapan map pada Golang:
+nilaiMurid := make(map[string]int) nilaiMurid[&amp;#34;Fauzan&amp;#34;] = 89 nilaiMurid[&amp;#34;Adhika&amp;#34;] = 90 nilaiMurid[&amp;#34;Budi&amp;#34;] = 100 fmt.Println(nilaiMurid) //map[Adhika:90 Budi:100 Fauzan:89] Inisialisasi Map sekaligus dengan valuenya Dalam golang kita juga dapat menginisialisasi Map sekaligus valuenya</description>
+    </item>
+    
     <item>
       <title>Tutorial Golang: Array</title>
       <link>https://sekolahbackend.web.app/id/blog/golang/11-array/</link>
@@ -139,6 +253,15 @@ nah seperti kalian lihat, file go.mod terbuat secara otomatis, sekarang kita sud
       <description>Sejarah Golang: Golang adalah bahasa pemrograman yang dibuat di Google pada tahun 2009 oleh Robert Griesemer, Rob Pike, dan Ken Thompson.
 Golang sangat terkenal karena bahasanya mudah di pahami, dinamis dan mudah untuk integrasi dengan bahasa lain, dengan begitu golang sangat cocok untuk mengembangkan aplikasi dengan traffic tinggi.
 Berikut cara instalasi golang: Download file binary di https://go.dev/dl/ berdasarkan sistem operasi kalian. Buka file binary yang sudah terdownload, lalu kalian bisa klik continue dan ikuti step seperti install aplikasi pada umumnya.</description>
+    </item>
+    
+    <item>
+      <title>Tentang Sekolah Backend</title>
+      <link>https://sekolahbackend.web.app/id/page/about/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sekolahbackend.web.app/id/page/about/</guid>
+      <description>Comming Soon</description>
     </item>
     
   </channel>

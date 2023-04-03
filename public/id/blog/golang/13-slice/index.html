@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+  Tutorial Golang: Slice - Sekolah Backend
+  </title>
+  <meta name="description" content="Belajar Slice pada Golang" />
+  <meta name="author" content="Adhika Guna" />
+  <meta name="generator" content="Hugo 0.110.0"><link
+    rel="stylesheet"
+    href="https://sekolahbackend.web.app/css/styles.min.49edc699b4975b70e7c85dc36bba5fd2094b7a58be02c8f748b76da966d14c37.css"
+    integrity="sha256-Se3GmbSXW3DnyF3Da7pf0glLeli+Asj3SLdtqWbRTDc="
+  />
+  
+  
+
+  <meta property="og:title" content="Tutorial Golang: Slice" />
+<meta property="og:description" content="Belajar Slice pada Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sekolahbackend.web.app/id/blog/golang/13-slice/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-03-10T12:20:37+07:00" />
+<meta property="article:modified_time" content="2023-03-10T12:20:37+07:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Golang: Slice"/>
+<meta name="twitter:description" content="Belajar Slice pada Golang"/>
+
+  <meta itemprop="name" content="Tutorial Golang: Slice">
+<meta itemprop="description" content="Belajar Slice pada Golang"><meta itemprop="datePublished" content="2023-03-10T12:20:37+07:00" />
+<meta itemprop="dateModified" content="2023-03-10T12:20:37+07:00" />
+<meta itemprop="wordCount" content="669">
+<meta itemprop="keywords" content="" />
+
+  
+  <meta name="lang" content="id" />
+  
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://sekolahbackend.web.app/id/" class="capitalize font-extrabold text-2xl">
+    
+    Sekolah Backend
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/id/blog">Semua Kelas</a></li>
+    
+    <li><a href="/id/page/about/">About</a></li>
+    
+
+    
+    
+    <li class="relative cursor-pointer">
+      
+      <div
+        class="language-dropdown absolute top-full mt-2 left-0 flex-col gap-2 bg-gray-100 dark:bg-gray-900 dark:text-white z-10 hidden">
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/en" lang="en">English</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/fr" lang="fr">Français</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/de" lang="de">Deutsch</a>
+        
+        
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/dy" lang="dy">Test Language</a>
+        
+        
+      </div>
+    </li>
+    
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/013-slice/thumbnail.png" class="rounded-lg shadow-sm w-full object-contain" />
+    
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    March 10, 2023
+  
+
+
+    </div>
+    
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-xl font-bold mb-2">Tutorial Golang: Slice</h1>
+    
+    <h5 class="text-sm flex items-center flex-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    March 10, 2023
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      669&nbsp;words
+      
+    </h5>
+    
+
+    <details id="TableOfContents" class="px-4 mt-4 bg-gray-100 dark:bg-gray-700 rounded toc">
+    <summary class="flex items-center font-bold py-2 px-4 cursor-pointer justify-between select-none text-black dark:text-white">
+      <span>Table of contents</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <polyline points="6 9 12 15 18 9"></polyline>
+     </svg>
+    </summary>
+
+    <ul class="mt-2 pb-4">
+        
+
+        
+        <li>
+        <a href="#slice">SLice</a>
+        
+
+        
+        </li><li>
+        <a href="#inisialisasi-slice">Inisialisasi Slice</a>
+        
+
+        
+        </li><li>
+        <a href="#slicing-dengan-slice">Slicing dengan slice</a>
+        
+
+        
+        </li><li>
+        <a href="#len-dan-cap-pada-slice">len() dan cap() pada slice</a>
+        
+
+        
+        </li><li>
+        <a href="#slice-adalah-reference">Slice adalah reference</a>
+        
+
+        
+        </li><li>
+        <a href="#copy-pada-slice">copy() pada slice</a>
+        
+
+        
+        <ul>
+            <li>
+        <a href="#kelemahan-copy">Kelemahan copy()</a>
+        
+
+        
+        </li></ul>
+      </li><li>
+        <a href="#apa-selanjutnya">Apa selanjutnya?</a>
+        </li></ul>
+  </details>
+
+    <h3 id="slice">SLice</h3>
+<p>Slice sama dengan array, untuk menyimpan banyak value di dalam 1 variable. Tapi beda dengan array slice lebih powerful dan flexible dari pada array. Slice dapat menyesuaikan sizenya, sesuai jumlah data, tidak fixed seperti array.</p>
+<h3 id="inisialisasi-slice">Inisialisasi Slice</h3>
+<p>Dalam Go kita dapat inisialiasi array dengan syntax <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">[]data_type{value}</code>, untuk mengakses slice juga sama dengan array kita dapat menggunakan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">varArray[num_index]</code>.</p>
+<p>Berikut contoh slice pada Go:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>mySlice <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">string</span>{<span style="color:#f1fa8c">&#34;Pisang&#34;</span>, <span style="color:#f1fa8c">&#34;Anggur&#34;</span>, <span style="color:#f1fa8c">&#34;Mangga&#34;</span>, <span style="color:#f1fa8c">&#34;Jeruk&#34;</span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(mySlice) <span style="color:#6272a4">//[Pisang Anggur Mangga Jeruk]
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>fmt.<span style="color:#50fa7b">Println</span>(mySlice[<span style="color:#bd93f9">0</span>]) <span style="color:#6272a4">//Pisang
+</span></span></span></code></pre></div><h3 id="slicing-dengan-slice">Slicing dengan slice</h3>
+<p>Dengan slice kita dapat memotong sebagian data, misal kita ingin hanya mengambil 5 data terakhir dalam / 5 data pertama, kita juga dapat menggambil data dengan range, misal kita ingin mengambil data dari index 2 sampai 5.</p>
+<p>Kita dapat slicing slice menggunakan syntax <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">[low:max]</code></p>
+<ul>
+<li>Misal kita ingin mengambil <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">5 data pertama</code>, syntaxnya akan seperti ini <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">mySlice[:5]</code></li>
+<li>Misal kita ingin mengambil <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">5 data terakhir</code>, syntaxnya akan seperti ini <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">mySlice[5:]</code></li>
+<li>Misal kita ingin mengambil <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">data dari index 2 - 5</code> syntaxnya akan seperti ini <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">mySlice[len(mySlice)-5:]</code></li>
+</ul>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>mySlice <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">string</span>{<span style="color:#f1fa8c">&#34;Pisang&#34;</span>, <span style="color:#f1fa8c">&#34;Anggur&#34;</span>, <span style="color:#f1fa8c">&#34;Mangga&#34;</span>, <span style="color:#f1fa8c">&#34;Jeruk&#34;</span>, <span style="color:#f1fa8c">&#34;Kiwi&#34;</span>, <span style="color:#f1fa8c">&#34;Alpuket&#34;</span>, <span style="color:#f1fa8c">&#34;Apel&#34;</span>, <span style="color:#f1fa8c">&#34;Nanas&#34;</span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;5 data pertama:&#34;</span>, mySlice[:<span style="color:#bd93f9">5</span>])
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;5 data terakhir:&#34;</span>, mySlice[<span style="color:#8be9fd;font-style:italic">len</span>(mySlice)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5</span>:])
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;data dari index 2 - 5:&#34;</span>, mySlice[<span style="color:#bd93f9">2</span>:<span style="color:#bd93f9">5</span>])
+</span></span></code></pre></div><p>Berikut hasilnya:
+<img src="/013-slice/pict3.jpg" alt="image info"></p>
+<h3 id="len-dan-cap-pada-slice">len() dan cap() pada slice</h3>
+<p>Kita dapat mengetahui panjang / banyaknya isi dari sebuah slice dengan menggunakan function <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">len()</code> dan kita dapat mengecek kapasitas sebuah slice dengan function <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">cap()</code></p>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;len():&#34;</span>, <span style="color:#8be9fd;font-style:italic">len</span>(arrOfNum))
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;cap():&#34;</span>, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span></code></pre></div><p>Hasil eksekusi kode diatas:
+<img src="/013-slice/pict4.jpg" alt="image info"></p>
+<p>Kalau kita lihat di atas, hasilnya <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">len()</code> dan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">cap()</code>, sama-sama 5.</p>
+<p>Kita coba kurangi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">1</code> isi dari array <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code></p>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span>arrOfNum = arrOfNum[:<span style="color:#8be9fd;font-style:italic">len</span>(arrOfNum)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;arrOfNum:&#34;</span>, arrOfNum)
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;len():&#34;</span>, <span style="color:#8be9fd;font-style:italic">len</span>(arrOfNum))
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;cap():&#34;</span>, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span></code></pre></div><p>Hasil eksekusi kode diatas:
+<img src="/013-slice/pict5.jpg" alt="image info"></p>
+<p>Kalau kita lihat dari hasil eksekusi diatas, isi dari array <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code> berkurang 1 menjadi 4, sedangkan kapasitas dari array <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code> tetap 5.</p>
+<h3 id="slice-adalah-reference">Slice adalah reference</h3>
+<p>Hati2 ketika ingin mengassign sebuah slice ke variable baru, jika kita mengubah data di slice yang lama, maka data di slice baru akan ikut terupdate juga, itu dikarenakan slice adalah <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">reference</code>.</p>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span>arrOfNumClone <span style="color:#ff79c6">:=</span> arrOfNum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arrOfNum[<span style="color:#bd93f9">0</span>] = <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;arrOfNum:&#34;</span>, arrOfNum)
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;arrOfNumClone:&#34;</span>, arrOfNumClone)
+</span></span></code></pre></div><p>Berikut hasi eksekusi kode diatas:
+<img src="/013-slice/pict6.jpg" alt="image info"></p>
+<p>Kalau kita lihat dari hasil di atas, data index ke <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">0</code> pada <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNumClone</code> ikut terupdate menjadi 0. Lalu bagaiman ketika ingin mengcopy value slice ke variable baru?</p>
+<p>Untungnya Go menyediakan built-in function bernama <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">copy()</code>. Kita dapat menggunakan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">copy()</code> untuk mengcopy data dari 1 slice ke variable yang baru.</p>
+<h3 id="copy-pada-slice">copy() pada slice</h3>
+<p>Kita sudah belajar, kalau kita tidak bisa sembarangan mengassign slice pada variable baru. Kita dapat memanfaatkan function copy untuk mengcopy data slice dari 1 variable ke variable yang lain.</p>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> arrOfNumClone = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#8be9fd;font-style:italic">len</span>(arrOfNum))
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">copy</span>(arrOfNumClone, arrOfNum)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arrOfNum[<span style="color:#bd93f9">0</span>] = <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;arrOfNum:&#34;</span>, arrOfNum)
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;arrOfNumClone:&#34;</span>, arrOfNumClone)
+</span></span></code></pre></div><p>Berikut hasi eksekusi kode diatas:
+<img src="/013-slice/pict7.jpg" alt="image info"></p>
+<p>Kalau kita lihat dari hasil eksekusi kode diatas kita berhasil mengcopy slice dari variable <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code> ke <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNumClone</code> dan ketika index ke <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">0</code> pada <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code> di update data pada <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNumClone</code> tidak ikut terupdate.</p>
+<h4 id="kelemahan-copy">Kelemahan copy()</h4>
+<p>Ketika kita ingin menggunakan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">copy()</code> kita harus memastikan variable tujuan memiliki kapasitas yang sama dengan source datanya. Jika kapasitas variable tujuannya 0 maka datanya tidak akan tercopy.</p>
+<p>Berikut contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> arrOfNumClone = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">copy</span>(arrOfNumClone, arrOfNum)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Printf</span>(<span style="color:#f1fa8c">&#34;arrOfNum: %d capacity: %d&#34;</span>, arrOfNum, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Printf</span>(<span style="color:#f1fa8c">&#34;\narrOfNumClone: %d, capacity: %d&#34;</span>, arrOfNumClone, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNumClone))
+</span></span></code></pre></div><p>Hasil eksekusi kode diatas:
+<img src="/013-slice/pict8.jpg" alt="image info"></p>
+<p>Bisa kita lihat variable <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNumClone</code> memiliki kapasitas 0, dan valuenya kosong.</p>
+<p>Untuk menghindari hal seperti ini kita dapat menyamakan kapasitas variable <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNumClone</code> saat mengdeklarasikannya.</p>
+<p>Daripada mengdeklarasikan sizenya sama dengan 0</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> arrOfNumClone = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#bd93f9">0</span>)
+</span></span></code></pre></div><p>Lebih baik kita mengdeklarasikan sizenya sesuai dengan kapasitas dari <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">arrOfNum</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> arrOfNumClone = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span></code></pre></div><p>Berikut full contoh kodenya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>arrOfNum <span style="color:#ff79c6">:=</span> []<span style="color:#8be9fd">int</span>{<span style="color:#bd93f9">43</span>, <span style="color:#bd93f9">56</span>, <span style="color:#bd93f9">90</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">34</span>}
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">var</span> arrOfNumClone = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">int</span>, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">copy</span>(arrOfNumClone, arrOfNum)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Printf</span>(<span style="color:#f1fa8c">&#34;arrOfNum: %d capacity: %d&#34;</span>, arrOfNum, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNum))
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Printf</span>(<span style="color:#f1fa8c">&#34;\narrOfNumClone: %d, capacity: %d&#34;</span>, arrOfNumClone, <span style="color:#8be9fd;font-style:italic">cap</span>(arrOfNumClone))
+</span></span></code></pre></div><p>Berikut hasil eksekusi kodenya:
+<img src="/013-slice/pict9.jpg" alt="image info"></p>
+<p>Dapat kita lihat, valuenya berhasil tercopy dengan baik.</p>
+<h3 id="apa-selanjutnya">Apa selanjutnya?</h3>
+<p>Selanjutnya kita akan belajar function pada golang</p>
+<p>Happy learning! 😆</p>
+
+
+
+  </article>
+  
+<div id="disqus_thread" class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sekolahbackend" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+
+
+
+
+  
+
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    © 2023 - Sekolah Backend · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://sekolahbackend.web.app/js/scripts.min.js"></script>
+
+
+
+
+<script>
+  const languageMenuButton = document.querySelector('.language-switcher');
+  const languageDropdown = document.querySelector('.language-dropdown');
+  languageMenuButton.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    if (languageDropdown.classList.contains('hidden')) {
+      languageDropdown.classList.remove('hidden')
+      languageDropdown.classList.add('flex')
+    } else {
+      languageDropdown.classList.add('hidden');
+      languageDropdown.classList.remove('flex');
+    }
+  })
+</script>
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>
