@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+  Tutorial Golang: Interface Kosong - Sekolah Backend
+  </title>
+  <meta name="description" content="Belajar Interface kosong pada Golang" />
+  <meta name="author" content="Adhika Guna" />
+  <meta name="generator" content="Hugo 0.110.0"><link
+    rel="stylesheet"
+    href="https://sekolahbackend.web.app/css/styles.min.49edc699b4975b70e7c85dc36bba5fd2094b7a58be02c8f748b76da966d14c37.css"
+    integrity="sha256-Se3GmbSXW3DnyF3Da7pf0glLeli+Asj3SLdtqWbRTDc="
+  />
+  
+  
+
+  <meta property="og:title" content="Tutorial Golang: Interface Kosong" />
+<meta property="og:description" content="Belajar Interface kosong pada Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sekolahbackend.web.app/id/blog/golang/22-empty-interface/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-04-05T21:34:05+07:00" />
+<meta property="article:modified_time" content="2023-04-05T21:34:05+07:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Golang: Interface Kosong"/>
+<meta name="twitter:description" content="Belajar Interface kosong pada Golang"/>
+
+  <meta itemprop="name" content="Tutorial Golang: Interface Kosong">
+<meta itemprop="description" content="Belajar Interface kosong pada Golang"><meta itemprop="datePublished" content="2023-04-05T21:34:05+07:00" />
+<meta itemprop="dateModified" content="2023-04-05T21:34:05+07:00" />
+<meta itemprop="wordCount" content="453">
+<meta itemprop="keywords" content="" />
+
+  
+  <meta name="lang" content="id" />
+  
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://sekolahbackend.web.app/id/" class="capitalize font-extrabold text-2xl">
+    
+    Sekolah Backend
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/id/blog">Semua Kelas</a></li>
+    
+    <li><a href="/id/page/about/">About</a></li>
+    
+
+    
+    
+    <li class="relative cursor-pointer">
+      
+      <div
+        class="language-dropdown absolute top-full mt-2 left-0 flex-col gap-2 bg-gray-100 dark:bg-gray-900 dark:text-white z-10 hidden">
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/en" lang="en">English</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/fr" lang="fr">Français</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/de" lang="de">Deutsch</a>
+        
+        
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/dy" lang="dy">Test Language</a>
+        
+        
+      </div>
+    </li>
+    
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/022-empty-interface/thumbnail.png" class="rounded-lg shadow-sm w-full object-contain" />
+    
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    April 5, 2023
+  
+
+
+    </div>
+    
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-xl font-bold mb-2">Tutorial Golang: Interface Kosong</h1>
+    
+    <h5 class="text-sm flex items-center flex-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    April 5, 2023
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      3&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      453&nbsp;words
+      
+    </h5>
+    
+
+    <details id="TableOfContents" class="px-4 mt-4 bg-gray-100 dark:bg-gray-700 rounded toc">
+    <summary class="flex items-center font-bold py-2 px-4 cursor-pointer justify-between select-none text-black dark:text-white">
+      <span>Table of contents</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <polyline points="6 9 12 15 18 9"></polyline>
+     </svg>
+    </summary>
+
+    <ul class="mt-2 pb-4">
+        
+
+        
+        <li>
+        <a href="#interface-kosong">Interface kosong</a>
+        
+
+        
+        </li><li>
+        <a href="#penggunaan-empty-interface">Penggunaan Empty Interface</a>
+        
+
+        
+        </li><li>
+        <a href="#kelemahan-empty-interface">Kelemahan Empty Interface</a>
+        
+
+        
+        </li><li>
+        <a href="#konversi-tipe-data-dari-empty-interface">Konversi tipe data dari empty interface</a>
+        
+
+        
+        </li><li>
+        <a href="#any">any</a>
+        
+
+        
+        </li><li>
+        <a href="#apa-selanjutnya">Apa selanjutnya?</a>
+        </li></ul>
+  </details>
+
+    <h3 id="interface-kosong">Interface kosong</h3>
+<p>Salah satu fitur yang menarik di Golang adalah penggunaan empty interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">interface</span>{}
+</span></span></code></pre></div><p>Empty interface atau interface kosong, dapat digunakan untuk mewakili nilai apa pun di Golang.</p>
+<p>Empty interface tidak memiliki method yang didefinisikan di dalamnya. Ini berarti empty interface tidak memiliki aturan apapun terkait dengan struktur atau nilai yang akan diterima.</p>
+<p>Empty interface dapat merepresentasikan nilai apa pun, bahkan objek dari tipe data yang berbeda.</p>
+<h3 id="penggunaan-empty-interface">Penggunaan Empty Interface</h3>
+<p>Berikut contoh penggunaan Empty Interface</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">printAny</span>(i <span style="color:#8be9fd;font-style:italic">interface</span>{}) {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#50fa7b">Println</span>(i)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Pada kode di atas, kita dapat melihat bahwa parameter fungsi didefinisikan sebagai <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">interface{}</code>.</p>
+<p>Ini berarti bahwa fungsi tersebut menerima nilai apa pun sebagai argumen.</p>
+<p>Ketika kita memanggil fungsi tersebut dengan argumen <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">printAny(1)</code>, kita akan mendapatkan output <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">1</code>, sedangkan jika kita memanggil dengan argumen <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">printAny(&#39;hello&#39;)</code>, maka outputnya akan menjadi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">hello</code>.</p>
+<p><strong>Ini menunjukkan bahwa empty interface dapat merepresentasikan nilai apa pun.</strong></p>
+<h3 id="kelemahan-empty-interface">Kelemahan Empty Interface</h3>
+<p>Penggunaan empty interface juga memiliki kelemahan. Karena empty interface dapat menerima nilai apa pun, maka kita tidak dapat menentukan method yang tersedia pada nilai tersebut.</p>
+<p>Sebagai contoh, jika kita menggunakan empty interface untuk merepresentasikan sebuah <code>string</code>, maka kita tidak dapat memanggil method khusus seperti <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">len()</code> atau <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">ToUpper()</code> pada nilai tersebut.</p>
+<p>Hal ini yang membuat kita perlu melakukan konversi tipe data agar dapat mengakses method yang diperlukan.</p>
+<h3 id="konversi-tipe-data-dari-empty-interface">Konversi tipe data dari empty interface</h3>
+<p>Berikut ini contoh kode yang menunjukkan cara menggunakan empty interface dan melakukan konversi tipe data untuk mengakses method spesifik:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">var</span> data <span style="color:#8be9fd;font-style:italic">interface</span>{}
+</span></span><span style="display:flex;"><span>	data = <span style="color:#f1fa8c">&#34;Hello, World!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	strData, isOk <span style="color:#ff79c6">:=</span> data.(<span style="color:#8be9fd">string</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;isOk:&#34;</span>, isOk)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;string:&#34;</span>, strData)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;stringUpper:&#34;</span>, strings.<span style="color:#50fa7b">ToUpper</span>(strData))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Pada kode di atas, kita menggunakan empty interface untuk merepresentasikan nilai string.</p>
+<p>Kita kemudian melakukan konversi tipe data menggunakan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">(string)</code> untuk mengakses method <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">strings.ToUpper()</code> pada nilai tersebut.</p>
+<p><code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">(string)</code> mengembalikan 2 data:</p>
+<ul>
+<li>Data yang sudah dikonversikan ke string</li>
+<li>Data boolean yang memberitahu apakah process konversi berhasil atau tidak (true jika berhasil, false jika gagal / error)</li>
+</ul>
+<p>Hasil eksekusi kode diatas:
+<img src="/022-empty-interface/pict1.jpeg" alt="image info"></p>
+<p>Berikut lebih banyak contoh konversi untuk tipe data lainnya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">var</span> data1, data2, data3 <span style="color:#8be9fd;font-style:italic">interface</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	data1 = <span style="color:#bd93f9">23</span>
+</span></span><span style="display:flex;"><span>	data2 = <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>	data3 = <span style="color:#bd93f9">23.4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	data1Converted <span style="color:#ff79c6">:=</span> data1.(<span style="color:#8be9fd">int</span>)
+</span></span><span style="display:flex;"><span>	data2Converted <span style="color:#ff79c6">:=</span> data2.(<span style="color:#8be9fd">bool</span>)
+</span></span><span style="display:flex;"><span>	data3Converted <span style="color:#ff79c6">:=</span> data3.(<span style="color:#8be9fd">float64</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;int:&#34;</span>, data1Converted)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;bool:&#34;</span>, data2Converted)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;float64:&#34;</span>, data3Converted)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Berikut hasil eksekusi kode diatas:
+<img src="/022-empty-interface/pict2.jpg" alt="image info"></p>
+<h3 id="any">any</h3>
+<p>Dalam go kita juga dapat menggunakan tipe data <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">any</code> jika tidak ingin menulis empty interface.</p>
+<p>Tapi pada dasarnya <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">any == interface{}</code>, <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">any</code> hanyalah alias dari interface kosong, jadi penggunaan dan fungsinya juga sama saja.
+<img src="/022-empty-interface/pict3.jpg" alt="image info"></p>
+<p>Berikut contoh kode jika menggunakan any:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">var</span> stringInterface <span style="color:#8be9fd;font-style:italic">interface</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">var</span> stringAny any
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	stringInterface = <span style="color:#f1fa8c">&#34;Hello all!&#34;</span>
+</span></span><span style="display:flex;"><span>	stringAny = <span style="color:#f1fa8c">&#34;Hello all!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	stringDataInterface <span style="color:#ff79c6">:=</span> stringInterface.(<span style="color:#8be9fd">string</span>)
+</span></span><span style="display:flex;"><span>	stringDataAny <span style="color:#ff79c6">:=</span> stringAny.(<span style="color:#8be9fd">string</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;string from interface&#34;</span>, stringDataInterface)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;string from any&#34;</span>, stringDataAny)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Berikut hasil eksekusi kode diatas:
+<img src="/022-empty-interface/pict4.jpg" alt="image info"></p>
+<h3 id="apa-selanjutnya">Apa selanjutnya?</h3>
+<p>Selanjutnya kita akan belajar mengenai package reflect pada golang</p>
+<p>Happy learning! 😆</p>
+
+
+
+  </article>
+  
+<div id="disqus_thread" class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sekolahbackend" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+
+
+
+
+  
+
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    © 2023 - Sekolah Backend · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://sekolahbackend.web.app/js/scripts.min.js"></script>
+
+
+
+
+<script>
+  const languageMenuButton = document.querySelector('.language-switcher');
+  const languageDropdown = document.querySelector('.language-dropdown');
+  languageMenuButton.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    if (languageDropdown.classList.contains('hidden')) {
+      languageDropdown.classList.remove('hidden')
+      languageDropdown.classList.add('flex')
+    } else {
+      languageDropdown.classList.add('hidden');
+      languageDropdown.classList.remove('flex');
+    }
+  })
+</script>
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>
