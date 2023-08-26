@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sekolah Backend</title>
-    <link>https://sekolahbackend.web.app/id/tags/</link>
+    <link>https://sekolahbackend.com/id/tags/</link>
     <description>Recent content in Tags on Sekolah Backend</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Mar 2023 22:06:06 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 22:06:06 +0700</lastBuildDate><atom:link href="https://sekolahbackend.com/id/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang</title>
-      <link>https://sekolahbackend.web.app/id/tags/golang/</link>
+      <link>https://sekolahbackend.com/id/tags/golang/</link>
       <pubDate>Wed, 01 Mar 2023 22:06:06 +0700</pubDate>
       
-      <guid>https://sekolahbackend.web.app/id/tags/golang/</guid>
+      <guid>https://sekolahbackend.com/id/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code editor</title>
-      <link>https://sekolahbackend.web.app/id/tags/code-editor/</link>
+      <link>https://sekolahbackend.com/id/tags/code-editor/</link>
       <pubDate>Sat, 18 Feb 2023 14:05:37 +0700</pubDate>
       
-      <guid>https://sekolahbackend.web.app/id/tags/code-editor/</guid>
+      <guid>https://sekolahbackend.com/id/tags/code-editor/</guid>
       <description></description>
     </item>
     

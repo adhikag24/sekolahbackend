@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on Sekolah Backend</title>
+    <link>https://sekolahbackend.com/id/blog/kafka/</link>
+    <description>Recent content in Kafka on Sekolah Backend</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Jun 2023 20:30:01 +0700</lastBuildDate><atom:link href="https://sekolahbackend.com/id/blog/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Kafka: Cluster dan Broker</title>
+      <link>https://sekolahbackend.com/id/blog/kafka/cluster-broker/</link>
+      <pubDate>Mon, 26 Jun 2023 20:24:17 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.com/id/blog/kafka/cluster-broker/</guid>
+      <description>Cluster pada Kafka Cluster Kafka adalah sekelompok server (broker) yang bekerja sama untuk membuat sistem terdistribusi untuk menangani dan mengelola streaming data. Ini bertindak sebagai infrastruktur yang kuat (high availability) dan ketahanan (fault tolerance), berfungsi untuk memproses dan menyimpan data secara real-time.
+Sebuah cluster terdiri dari satu atau lebih broker yang berkolaborasi untuk melakukan tugasnya.
+Broker pada Kafka Broker adalah instance atau server tunggal dalam sebuah cluster Kafka.
+Broker bertanggung jawab untuk menerima, menyimpan, dan melayani streaming data.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Kafka: Partition dan Topic</title>
+      <link>https://sekolahbackend.com/id/blog/kafka/03-topic-partition/</link>
+      <pubDate>Fri, 23 Jun 2023 22:41:26 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.com/id/blog/kafka/03-topic-partition/</guid>
+      <description>Dalam Apache Kafka, terdapat dua konsep yang menjadi dasar dari sistem streaming ini, yaitu partition dan topic.
+Partisi dan topik memainkan peran penting dalam mengorganize dan menyimpan data stream secara real-time.
+Partition dalam Kafka Partition adalah unit dasar penyimpanan dan replikasi data dalam sebuah topic di Kafka.
+Setiap topik dalam Kafka terdiri dari satu atau lebih partition yang menyimpan urutan pesan. Setiap pesan yang dikirimkan ke topik akan di-assign secara otomatis ke salah satu partition.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Kafka: Instalasi Kafka</title>
+      <link>https://sekolahbackend.com/id/blog/kafka/02-instalasi-kafka/</link>
+      <pubDate>Wed, 21 Jun 2023 22:22:39 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.com/id/blog/kafka/02-instalasi-kafka/</guid>
+      <description>Instalasi Kafka Ada banyak cara untuk instalasi kafka, melalui Docker, Cloud Provider, atau install langsung dari websitenya. Biasanya jika lewat Docker instalasi akan mudah karena semua sudah disediakan oleh Docker.
+Tapi di artikel ini kita akan mencoba install kafka langsung melalui websitenya dan menjalankan kafka pada laptop / komputer kita.
+Langkah 1: Requirement Requirement untuk menginstall kafka adalah memiliki Java Development Kit (JDK) versi 8 atau yang lebih baru, saya sarankan install yang dibawa versi 15.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Kafka: Konsep dan Terminologi pada Kafka</title>
+      <link>https://sekolahbackend.com/id/blog/kafka/01-terminology-kafka/</link>
+      <pubDate>Sun, 18 Jun 2023 22:29:58 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.com/id/blog/kafka/01-terminology-kafka/</guid>
+      <description>Terminologi pada Kafka Kafka memiliki konsep dan terminologi khusus yang penting untuk dipahami agar dapat menggunakan tool ini secara efektif.
+Berikut beberapa key concept dan terminologi dalam Kafka beserta penjelasannya.
+Topic Topic dalam Kafka adalah saluran yang digunakan untuk mengorganisir dan mengelompokkan aliran data.
+Setiap pesan yang dikirim ke Kafka dikategorikan ke dalam topik tertentu. Misalnya, jika kita memiliki topik dengan nama sensor-data semua pesan sensor akan dikirim ke topik tersebut.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Kafka: Pengenalan Kafka</title>
+      <link>https://sekolahbackend.com/id/blog/kafka/00-seputar-kafka/</link>
+      <pubDate>Thu, 15 Jun 2023 20:49:33 +0700</pubDate>
+      
+      <guid>https://sekolahbackend.com/id/blog/kafka/00-seputar-kafka/</guid>
+      <description>Apa itu Apache Kafka? Apache Kafka adalah platform pengiriman pesan yang didistribusikan dan scalable yang dirancang untuk mengatasi tantangan pengiriman pesan dalam skala besar dan pengolahan data real-time.
+Apache Kafka adalah proyek open-source yang pertama kali dikembangkan oleh LinkedIn dan kemudian disumbangkan ke Apache Software Foundation.
+Kafka dirancang untuk mengatasi data stream dan pesan secara real-time antara aplikasi dan sistem yang terdistribusi / biasa kita sebut microservice.
+Arsitektur Kafka Kafka memiliki arsitektur yang terdiri dari beberapa komponen utama.</description>
+    </item>
+    
+  </channel>
+</rss>

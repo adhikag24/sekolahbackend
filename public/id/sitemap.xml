@@ -2,180 +2,231 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sekolahbackend.web.app/id/blog/</loc>
-    <lastmod>2023-04-10T19:52:42+07:00</lastmod>
+    <loc>https://sekolahbackend.com/id/blog/</loc>
+    <lastmod>2023-06-26T20:24:17+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/</loc>
-    <lastmod>2023-04-10T19:52:42+07:00</lastmod>
+    <loc>https://sekolahbackend.com/id/</loc>
+    <lastmod>2023-06-26T20:24:17+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sekolahbackend.web.app/en/"
+                href="https://sekolahbackend.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://sekolahbackend.web.app/fr/"
+                href="https://sekolahbackend.com/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://sekolahbackend.web.app/de/"
+                href="https://sekolahbackend.com/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="dy"
-                href="https://sekolahbackend.web.app/dy/"
+                href="https://sekolahbackend.com/dy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="https://sekolahbackend.web.app/id/"
+                href="https://sekolahbackend.com/id/"
                 />
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/24-goroutine/</loc>
+    <loc>https://sekolahbackend.com/id/blog/kafka/cluster-broker/</loc>
+    <lastmod>2023-06-26T20:24:17+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/kafka/03-topic-partition/</loc>
+    <lastmod>2023-06-23T22:41:26+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/kafka/02-instalasi-kafka/</loc>
+    <lastmod>2023-06-21T22:22:39+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/kafka/01-terminology-kafka/</loc>
+    <lastmod>2023-06-18T22:29:58+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/kafka/00-seputar-kafka/</loc>
+    <lastmod>2023-06-15T20:49:33+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/kafka/</loc>
+    <lastmod>2023-06-15T20:30:01+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/35-test/</loc>
+    <lastmod>2023-06-11T23:23:35+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/34-mutex/</loc>
+    <lastmod>2023-04-25T22:55:11+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/33-waitgroup/</loc>
+    <lastmod>2023-04-24T15:50:20+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/32-regex/</loc>
+    <lastmod>2023-04-21T22:13:07+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/31-json/</loc>
+    <lastmod>2023-04-20T23:40:21+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/30-time/</loc>
+    <lastmod>2023-04-19T22:36:31+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/29-layout-string/</loc>
+    <lastmod>2023-04-17T16:38:27+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/28-defer-panic-recover/</loc>
+    <lastmod>2023-04-16T13:22:30+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/27-channel-advance/</loc>
+    <lastmod>2023-04-15T11:07:38+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/26-buffered-channel/</loc>
+    <lastmod>2023-04-13T20:08:53+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/25-channel/</loc>
+    <lastmod>2023-04-11T23:12:00+07:00</lastmod>
+  </url><url>
+    <loc>https://sekolahbackend.com/id/blog/golang/24-goroutine/</loc>
     <lastmod>2023-04-10T19:52:42+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/23-reflect/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/23-reflect/</loc>
     <lastmod>2023-04-06T23:41:42+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/22-empty-interface/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/22-empty-interface/</loc>
     <lastmod>2023-04-05T21:34:05+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/21-interface/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/21-interface/</loc>
     <lastmod>2023-04-03T22:05:12+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/20-export-unexport/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/20-export-unexport/</loc>
     <lastmod>2023-03-30T20:55:34+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/19-method/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/19-method/</loc>
     <lastmod>2023-03-28T15:42:33+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/18-struct/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/18-struct/</loc>
     <lastmod>2023-03-27T14:45:37+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/17-pointer/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/17-pointer/</loc>
     <lastmod>2023-03-26T15:24:31+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/16-closure/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/16-closure/</loc>
     <lastmod>2023-03-24T16:37:28+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/15-variadic-function/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/15-variadic-function/</loc>
     <lastmod>2023-03-20T22:24:21+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/14-function/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/14-function/</loc>
     <lastmod>2023-03-14T22:16:40+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/13-slice/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/13-slice/</loc>
     <lastmod>2023-03-10T12:20:37+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/12-map/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/12-map/</loc>
     <lastmod>2023-03-06T22:41:34+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/11-array/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/11-array/</loc>
     <lastmod>2023-03-05T15:47:57+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/10-perulangan/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/10-perulangan/</loc>
     <lastmod>2023-03-04T15:17:37+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/golang/</loc>
+    <loc>https://sekolahbackend.com/id/tags/golang/</loc>
     <lastmod>2023-03-01T22:06:06+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/</loc>
+    <loc>https://sekolahbackend.com/id/tags/</loc>
     <lastmod>2023-03-01T22:06:06+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sekolahbackend.web.app/en/tags/"
+                href="https://sekolahbackend.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://sekolahbackend.web.app/fr/tags/"
+                href="https://sekolahbackend.com/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://sekolahbackend.web.app/de/tags/"
+                href="https://sekolahbackend.com/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="dy"
-                href="https://sekolahbackend.web.app/dy/tags/"
+                href="https://sekolahbackend.com/dy/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="https://sekolahbackend.web.app/id/tags/"
+                href="https://sekolahbackend.com/id/tags/"
                 />
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/09-kondisi/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/09-kondisi/</loc>
     <lastmod>2023-03-01T22:06:06+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/08-operator/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/08-operator/</loc>
     <lastmod>2023-02-27T01:22:24+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/07-konstanta/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/07-konstanta/</loc>
     <lastmod>2023-02-25T01:47:38+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/06-komentar/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/06-komentar/</loc>
     <lastmod>2023-02-25T00:59:12+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/05-tipe-data/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/05-tipe-data/</loc>
     <lastmod>2023-02-22T22:34:54+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/04-variable/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/04-variable/</loc>
     <lastmod>2023-02-20T21:17:19+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/03-hello-world-golang/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/03-hello-world-golang/</loc>
     <lastmod>2023-02-19T22:01:03+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/tags/code-editor/</loc>
+    <loc>https://sekolahbackend.com/id/tags/code-editor/</loc>
     <lastmod>2023-02-18T14:05:37+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/02-instalasi-editor/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/02-instalasi-editor/</loc>
     <lastmod>2023-02-18T14:05:37+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/01-setup-go-module/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/01-setup-go-module/</loc>
     <lastmod>2023-02-18T13:28:53+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/00-instalasi-golang/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/00-instalasi-golang/</loc>
     <lastmod>2023-02-16T21:28:52+07:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/blog/golang/</loc>
+    <loc>https://sekolahbackend.com/id/blog/golang/</loc>
     <lastmod>2023-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/page/</loc>
+    <loc>https://sekolahbackend.com/id/page/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/page/about/</loc>
+    <loc>https://sekolahbackend.com/id/page/about/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sekolahbackend.web.app/id/categories/</loc>
+    <loc>https://sekolahbackend.com/id/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sekolahbackend.web.app/en/categories/"
+                href="https://sekolahbackend.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://sekolahbackend.web.app/fr/categories/"
+                href="https://sekolahbackend.com/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://sekolahbackend.web.app/de/categories/"
+                href="https://sekolahbackend.com/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="dy"
-                href="https://sekolahbackend.web.app/dy/categories/"
+                href="https://sekolahbackend.com/dy/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="https://sekolahbackend.web.app/id/categories/"
+                href="https://sekolahbackend.com/id/categories/"
                 />
   </url>
 </urlset>

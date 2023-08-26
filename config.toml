@@ -1,9 +1,10 @@
-baseurl = "https://sekolahbackend.web.app/"
+baseurl = "https://sekolahbackend.com/"
 metaDataFormat = "yaml"
 title = "Sekolah Backend"
 theme = "blist"
 paginate = 6
 disqusShortname = "sekolahbackend"
+googleAnalytics = "G-SHS37TD15T"
 
 
 

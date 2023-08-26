@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+  Tutorial Golang: Unit Test - Sekolah Backend
+  </title>
+  <meta name="description" content="Belajar mengenai Unit Test pada Golang" />
+  <meta name="author" content="Adhika Guna" />
+  <meta name="generator" content="Hugo 0.110.0"><link
+    rel="stylesheet"
+    href="https://sekolahbackend.com/css/styles.min.49edc699b4975b70e7c85dc36bba5fd2094b7a58be02c8f748b76da966d14c37.css"
+    integrity="sha256-Se3GmbSXW3DnyF3Da7pf0glLeli+Asj3SLdtqWbRTDc="
+  />
+  
+  
+
+  <meta property="og:title" content="Tutorial Golang: Unit Test" />
+<meta property="og:description" content="Belajar mengenai Unit Test pada Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sekolahbackend.com/id/blog/golang/35-test/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-06-11T23:23:35+07:00" />
+<meta property="article:modified_time" content="2023-06-11T23:23:35+07:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Golang: Unit Test"/>
+<meta name="twitter:description" content="Belajar mengenai Unit Test pada Golang"/>
+
+  <meta itemprop="name" content="Tutorial Golang: Unit Test">
+<meta itemprop="description" content="Belajar mengenai Unit Test pada Golang"><meta itemprop="datePublished" content="2023-06-11T23:23:35+07:00" />
+<meta itemprop="dateModified" content="2023-06-11T23:23:35+07:00" />
+<meta itemprop="wordCount" content="617">
+<meta itemprop="keywords" content="" />
+
+  
+  <meta name="lang" content="id" />
+  
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://sekolahbackend.com/id/" class="capitalize font-extrabold text-2xl">
+    
+    Sekolah Backend
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/id/blog">Semua Kelas</a></li>
+    
+    <li><a href="/id/page/about/">About</a></li>
+    
+
+    
+    
+    <li class="relative cursor-pointer">
+      
+      <div
+        class="language-dropdown absolute top-full mt-2 left-0 flex-col gap-2 bg-gray-100 dark:bg-gray-900 dark:text-white z-10 hidden">
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/en" lang="en">English</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/fr" lang="fr">Français</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/de" lang="de">Deutsch</a>
+        
+        
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/dy" lang="dy">Test Language</a>
+        
+        
+      </div>
+    </li>
+    
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/035-test/thumbnail.png" class="rounded-lg shadow-sm w-full object-contain" />
+    
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    June 11, 2023
+  
+
+
+    </div>
+    
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-xl font-bold mb-2">Tutorial Golang: Unit Test</h1>
+    
+    <h5 class="text-sm flex items-center flex-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    June 11, 2023
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      3&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      617&nbsp;words
+      
+    </h5>
+    
+
+    <details id="TableOfContents" class="px-4 mt-4 bg-gray-100 dark:bg-gray-700 rounded toc">
+    <summary class="flex items-center font-bold py-2 px-4 cursor-pointer justify-between select-none text-black dark:text-white">
+      <span>Table of contents</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <polyline points="6 9 12 15 18 9"></polyline>
+     </svg>
+    </summary>
+
+    <ul class="mt-2 pb-4">
+        
+
+        
+        <li>
+        <a href="#unit-testing">Unit Testing</a>
+        
+
+        
+        </li><li>
+        <a href="#membuat-test">Membuat Test</a>
+        
+
+        
+        <ul>
+            <li>
+        <a href="#import-package-testing">Import Package testing</a>
+        
+
+        
+        </li><li>
+        <a href="#persiapan-file-test">Persiapan File Test</a>
+        
+
+        
+        </li><li>
+        <a href="#import-package-testing-1">Import Package testing</a>
+        
+
+        
+        </li><li>
+        <a href="#menulis-fungsi-test">Menulis Fungsi Test</a>
+        
+
+        
+        </li><li>
+        <a href="#menjalankan-unit-test">Menjalankan Unit Test</a>
+        
+
+        
+        </li><li>
+        <a href="#menjalankan-spesifik-fungsi-test">Menjalankan Spesifik Fungsi Test</a>
+        
+
+        
+        </li><li>
+        <a href="#menambahkan-assertion">Menambahkan assertion</a>
+        
+
+        
+        </li></ul>
+      </li><li>
+        <a href="#benchmarking">Benchmarking</a>
+        
+
+        
+        </li><li>
+        <a href="#menampilkan-detail">Menampilkan Detail</a>
+        </li></ul>
+  </details>
+
+    <h3 id="unit-testing">Unit Testing</h3>
+<p>Unit testing adalah proses pengujian perangkat lunak yang fokus pada pengujian unit-unit terkecil dari sebuah program, seperti fungsi atau metode. Dalam bahasa pemrograman Golang, unit testing sangat didukung dan telah disediakan oleh testing package bawaan. Dalam panduan ini, kita akan membahas cara melakukan unit testing di Golang menggunakan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">testing</code> package.</p>
+<h3 id="membuat-test">Membuat Test</h3>
+<p>Misalnya kita punya fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Add</code> yang kita ingin buatkan testnya.</p>
+<p>Berikut kode fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Add</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">Add</span>(num1, num2 <span style="color:#8be9fd">int</span>) <span style="color:#8be9fd">int</span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">return</span> num1 <span style="color:#ff79c6">+</span> num2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mari kita buat testnya.</p>
+<h4 id="import-package-testing">Import Package testing</h4>
+<p>Di awal file <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">test</code>, import package testing seperti berikut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h4 id="persiapan-file-test">Persiapan File Test</h4>
+<p>Buat file test yang terpisah untuk setiap file sumber yang ingin diuji. Misalnya, jika kita memiliki file <code>calculator.go</code> yang ingin diuji, buat file baru bernama <code>calculator_test.go</code>.</p>
+<p>Pastikan file test menggunakan nama yang sama dengan file sumber yang ingin diuji, dengan tambahan sufiks _test.</p>
+<p>Untuk contoh kita mari kita buat file <code>add_test.go</code>.</p>
+<h4 id="import-package-testing-1">Import Package testing</h4>
+<p>Di awal file <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">test</code>, import package testing seperti berikut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h4 id="menulis-fungsi-test">Menulis Fungsi Test</h4>
+<p>Setiap fungsi test harus memiliki signature yang mengikuti pola <code>func TestXxx(t *testing.T)</code>, di mana Xxx adalah nama fungsi yang ingin kita uji.</p>
+<p>Fungsi test harus menerima parameter t *testing.T yang merupakan testing.T object yang digunakan untuk melaporkan hasil pengujian.</p>
+<p>Berikut adalah contoh fungsi test untuk fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Add</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">TestAdd</span>(t <span style="color:#ff79c6">*</span>testing.T) {
+</span></span><span style="display:flex;"><span>    result <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">Add</span>(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span>    expected <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> result <span style="color:#ff79c6">!=</span> expected {
+</span></span><span style="display:flex;"><span>        t.<span style="color:#50fa7b">Errorf</span>(<span style="color:#f1fa8c">&#34;Expected %d, but got %d&#34;</span>, expected, result)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Dalam contoh di atas, kita menguji fungsi <code>Add</code> yang mengharapkan hasil penjumlahan 2 dan 3 sebesar 5.</p>
+<p>Jika hasil yang dikembalikan tidak sesuai dengan yang diharapkan, kita menggunakan <code>t.Errorf</code> untuk memberikan pesan error yang spesifik.</p>
+<h4 id="menjalankan-unit-test">Menjalankan Unit Test</h4>
+<p>Untuk menjalankan unit test, cukup jalankan perintah <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">go test</code> dari terminal di direktori proyek kita.</p>
+<p>Golang akan secara otomatis menemukan dan menjalankan semua fungsi test yang ada. Hasil pengujian akan ditampilkan di terminal.</p>
+<p>Berikut hasilnya:
+<img src="/035-test/pict1.jpeg" alt="image info"></p>
+<h4 id="menjalankan-spesifik-fungsi-test">Menjalankan Spesifik Fungsi Test</h4>
+<p>Jika kita hanya ingin menjalankan satu fungsi test tertentu, kita dapat menggunakan argumen <code>-run</code> saat menjalankan perintah go test.</p>
+<p>Misalnya, jika kita hanya ingin menjalankan fungsi test <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">TestAdd</code>, gunakan perintah berikut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go <span style="color:#8be9fd;font-style:italic">test</span> -run TestAdd
+</span></span></code></pre></div><h4 id="menambahkan-assertion">Menambahkan assertion</h4>
+<p>Assertion digunakan untuk memastikan bahwa kondisi yang diharapkan dalam unit test terpenuhi.</p>
+<p>Golang tidak memiliki assertion bawaan seperti bahasa pemrograman lain, tetapi kita dapat menggunakan <code>testify package</code> untuk melakukan hal tersebut.</p>
+<p>Sebelum menggunakan assertion kita harus mengimport <code>package testify</code> terlebih dahulu seperti ini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;github.com/stretchr/testify/assert&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Berikut kita modifikasi test diatas agar menggunakan assertion:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;github.com/stretchr/testify/assert&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">TestAdd</span>(t <span style="color:#ff79c6">*</span>testing.T) {
+</span></span><span style="display:flex;"><span>	result <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">Add</span>(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span>	expected <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	assert.<span style="color:#50fa7b">Equal</span>(t, result, expected)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="benchmarking">Benchmarking</h3>
+<p>Selain melakukan unit testing, Golang juga mendukung benchmarking untuk mengukur kinerja program.</p>
+<p>Kita dapat menambahkan fungsi benchmark yang mengikuti pola <code>func BenchmarkXxx(b *testing.B)</code>, di mana Xxx adalah nama fungsi yang ingin di-benchmark.</p>
+<p>Fungsi benchmark harus menggunakan parameter <code>b *testing.B</code> yang digunakan untuk mengontrol dan melaporkan hasil benchmark.</p>
+<p>Berikut adalah contoh penggunaan benchmark pada fungsi <code>Add</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">BenchmarkAdd</span>(b <span style="color:#ff79c6">*</span>testing.B) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; b.N; i<span style="color:#ff79c6">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#50fa7b">Add</span>(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Dalam contoh di atas, kita menguji kinerja fungsi Add dengan melakukan penjumlahan 2 dan 3 sebanyak <code>b.N</code> kali.</p>
+<p>Value <code>b.N</code> ditentukan secara otomatis oleh package <code>testing</code> untuk menentukan jumlah iterasi yang optimal agar mendapatkan hasil pengujian yang akurat dan dapat diandalkan.</p>
+<p>Hasil benchmark akan mencakup waktu yang dibutuhkan untuk menjalankan operasi tersebut.</p>
+<p>Kita dapat menjalankan unit test dan benchmark secara bersamaan menggunakan command <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">go test -bench .</code>.</p>
+<p><code>-bench</code> akan menjalankan semua fungsi benchmark yang ada.</p>
+<p>Berikut hasil dari benchmark diatas:
+<img src="/035-test/pict2.jpeg" alt="image info"></p>
+<h3 id="menampilkan-detail">Menampilkan Detail</h3>
+<p>Golang memiliki fitur verbose yang dapat digunakan untuk menampilkan detail hasil pengujian.</p>
+<p>Untuk mengaktifkan fitur ini, gunakan argumen -v saat menjalankan perintah go test.</p>
+<p>Contoh: <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">go test -v</code>.</p>
+
+
+
+  </article>
+  
+<div id="disqus_thread" class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sekolahbackend" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+
+
+
+
+  
+
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    © 2023 - Sekolah Backend · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://sekolahbackend.com/js/scripts.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHS37TD15T"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-SHS37TD15T', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+<script>
+  const languageMenuButton = document.querySelector('.language-switcher');
+  const languageDropdown = document.querySelector('.language-dropdown');
+  languageMenuButton.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    if (languageDropdown.classList.contains('hidden')) {
+      languageDropdown.classList.remove('hidden')
+      languageDropdown.classList.add('flex')
+    } else {
+      languageDropdown.classList.add('hidden');
+      languageDropdown.classList.remove('flex');
+    }
+  })
+</script>
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835360644807443"
+     crossorigin="anonymous"></script>
+</body>
+</html>

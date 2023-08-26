@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+  Tutorial Golang: Regex - Sekolah Backend
+  </title>
+  <meta name="description" content="Belajar menggunakan Regex pada Golang" />
+  <meta name="author" content="Adhika Guna" />
+  <meta name="generator" content="Hugo 0.110.0"><link
+    rel="stylesheet"
+    href="https://sekolahbackend.com/css/styles.min.49edc699b4975b70e7c85dc36bba5fd2094b7a58be02c8f748b76da966d14c37.css"
+    integrity="sha256-Se3GmbSXW3DnyF3Da7pf0glLeli+Asj3SLdtqWbRTDc="
+  />
+  
+  
+
+  <meta property="og:title" content="Tutorial Golang: Regex" />
+<meta property="og:description" content="Belajar menggunakan Regex pada Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sekolahbackend.com/id/blog/golang/32-regex/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-04-21T22:13:07+07:00" />
+<meta property="article:modified_time" content="2023-04-21T22:13:07+07:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Golang: Regex"/>
+<meta name="twitter:description" content="Belajar menggunakan Regex pada Golang"/>
+
+  <meta itemprop="name" content="Tutorial Golang: Regex">
+<meta itemprop="description" content="Belajar menggunakan Regex pada Golang"><meta itemprop="datePublished" content="2023-04-21T22:13:07+07:00" />
+<meta itemprop="dateModified" content="2023-04-21T22:13:07+07:00" />
+<meta itemprop="wordCount" content="868">
+<meta itemprop="keywords" content="" />
+
+  
+  <meta name="lang" content="id" />
+  
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://sekolahbackend.com/id/" class="capitalize font-extrabold text-2xl">
+    
+    Sekolah Backend
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/id/blog">Semua Kelas</a></li>
+    
+    <li><a href="/id/page/about/">About</a></li>
+    
+
+    
+    
+    <li class="relative cursor-pointer">
+      
+      <div
+        class="language-dropdown absolute top-full mt-2 left-0 flex-col gap-2 bg-gray-100 dark:bg-gray-900 dark:text-white z-10 hidden">
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/en" lang="en">English</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/fr" lang="fr">Français</a>
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/de" lang="de">Deutsch</a>
+        
+        
+        
+        
+        
+        <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/dy" lang="dy">Test Language</a>
+        
+        
+      </div>
+    </li>
+    
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/032-regex/thumbnail.png" class="rounded-lg shadow-sm w-full object-contain" />
+    
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    April 21, 2023
+  
+
+
+    </div>
+    
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-xl font-bold mb-2">Tutorial Golang: Regex</h1>
+    
+    <h5 class="text-sm flex items-center flex-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    April 21, 2023
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      5&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      868&nbsp;words
+      
+    </h5>
+    
+
+    <details id="TableOfContents" class="px-4 mt-4 bg-gray-100 dark:bg-gray-700 rounded toc">
+    <summary class="flex items-center font-bold py-2 px-4 cursor-pointer justify-between select-none text-black dark:text-white">
+      <span>Table of contents</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <polyline points="6 9 12 15 18 9"></polyline>
+     </svg>
+    </summary>
+
+    <ul class="mt-2 pb-4">
+        
+
+        
+        <li>
+        <a href="#regex">Regex</a>
+        
+
+        
+        </li><li>
+        <a href="#contoh-pola-regex-yang-umum-digunakan">Contoh pola regex yang umum digunakan</a>
+        
+
+        
+        </li><li>
+        <a href="#regex-di-go">Regex di Go</a>
+        
+
+        
+        </li><li>
+        <a href="#findstring--matchstring">FindString &amp; MatchString</a>
+        
+
+        
+        </li><li>
+        <a href="#replaceallstring">ReplaceAllString</a>
+        
+
+        
+        </li><li>
+        <a href="#split">Split</a>
+        
+
+        
+        </li><li>
+        <a href="#apa-selanjutnya">Apa selanjutnya?</a>
+        </li></ul>
+  </details>
+
+    <h3 id="regex">Regex</h3>
+<p>Regex atau Regular Expression adalah sebuah teks yang berisi pola yang digunakan untuk mencocokkan teks lainnya. Dalam bahasa pemrograman, penggunaan regex dapat membantu dalam mencari atau memproses sebuah string secara spesifik.</p>
+<p>Contohnya, kita dapat menggunakan regex untuk mencocokkan sebuah email, nomor telepon, atau mencari sebuah kata dalam sebuah dokumen.</p>
+<p>Pola regex terdiri dari karakter-karakter atau meta-karakter yang memiliki arti spesifik, seperti huruf, angka, karakter spesial, tanda kurung, tanda kurung siku, tanda kurung kurawal, dan sebagainya.</p>
+<p>Beberapa meta-karakte penting yang sering digunakan dalam regex adalah:</p>
+<ul>
+<li><code>^</code> (caret) yang digunakan untuk mencocokkan karakter pada awal string.</li>
+<li><code>$</code> (dollar) yang digunakan untuk mencocokkan karakter pada akhir string.</li>
+<li><code>.</code> (dot) yang digunakan untuk mencocokkan karakter apapun kecuali karakter newline.</li>
+<li><code>*</code> (asterisk) yang digunakan untuk mencocokkan nol atau lebih dari karakter sebelumnya.</li>
+<li><code>+</code> (plus) yang digunakan untuk mencocokkan satu atau lebih dari karakter sebelumnya.</li>
+<li><code>?</code> (question mark) yang digunakan untuk mencocokkan nol atau satu karakter sebelumnya.</li>
+<li><code>[]</code> (square brackets) yang digunakan untuk mencocokkan karakter yang berada di dalam tanda kurung siku.</li>
+<li><code>()</code> (parentheses) yang digunakan untuk mengelompokkan bagian-bagian dari pola regex.</li>
+<li><code>|</code> (vertical bar) yang digunakan untuk mencocokkan dua atau lebih pola regex.</li>
+</ul>
+<p>Dengan menggunakan kombinasi karakter-karakter dan meta-karakter tersebut, kita dapat membuat pola regex yang sesuai dengan kebutuhan.</p>
+<p>Namun, karena kompleksitas pola regex dapat sangat tinggi, maka diperlukan latihan dan pengalaman untuk dapat menguasai penggunaan regex secara efektif.</p>
+<h3 id="contoh-pola-regex-yang-umum-digunakan">Contoh pola regex yang umum digunakan</h3>
+<p>Berikut ini adalah beberapa contoh pola regex yang umum digunakan:</p>
+<ul>
+<li>Pola regex untuk mencari kata tertentu dalam sebuah teks:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`kata yang ingin dicari`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat kata yang ingin dicari dalam teks.</p>
+<ul>
+<li>Pola regex untuk mencari email:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat format email yang valid dalam teks.</p>
+<ul>
+<li>Pola regex untuk mencari nomor telepon:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`^\+?\d{2}[-.\s]?\d{3}[-.\s]?\d{3}[-.\s]?\d{4}$`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat format nomor telepon yang valid dalam teks, seperti +62-123-456-7890 atau 0812 123 4567.</p>
+<ul>
+<li>Pola regex untuk mencari URL:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`https?://[^\s]+`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat URL dalam teks, seperti <code>http://www.google.com</code> atau <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>.</p>
+<ul>
+<li>Pola regex untuk mencari kata yang diawali dengan huruf tertentu:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`\b[hH]\w+`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat kata yang diawali dengan huruf <code>h</code> atau <code>H</code> dalam teks.</p>
+<ul>
+<li>Pola regex untuk mencari angka:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`\d+`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat satu atau lebih angka dalam teks.</p>
+<ul>
+<li>Pola regex untuk mencari karakter non-alphanumeric:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`\W+`</span>)
+</span></span></code></pre></div><p>Penjelasan: Pola regex ini akan mencocokkan setiap kali terdapat satu atau lebih karakter non-alphanumeric dalam teks, seperti spasi, tanda baca, atau karakter khusus lainnya.</p>
+<h3 id="regex-di-go">Regex di Go</h3>
+<p>Go memiliki sebuah package yang disebut <code>regexp</code> yang dapat digunakan untuk bekerja dengan regex.</p>
+<p>Dalam paket ini, terdapat dua jenis fungsi yang dapat digunakan yaitu fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">FindString</code> dan fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">MatchString</code>.</p>
+<h3 id="findstring--matchstring">FindString &amp; MatchString</h3>
+<p>Fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">FindString</code> akan mencari sebuah string yang cocok dengan pola yang diberikan, sedangkan fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">MatchString</code> akan mencocokkan seluruh string yang ada dalam teks dengan pola yang diberikan.</p>
+<p>Berikut adalah contoh penggunaannya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;regexp&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>	r, _ <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">Compile</span>(<span style="color:#f1fa8c">&#34;p([a-z]+)ch&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(r.<span style="color:#50fa7b">FindString</span>(<span style="color:#f1fa8c">&#34;peach punch&#34;</span>))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(r.<span style="color:#50fa7b">FindString</span>(<span style="color:#f1fa8c">&#34;The quick brown fox jumps over the lazy dog&#34;</span>))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#50fa7b">Println</span>(r.<span style="color:#50fa7b">MatchString</span>(<span style="color:#f1fa8c">&#34;peach punch&#34;</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Hasil eksekusi kode diatas:
+<img src="/032-regex/pict1.jpeg" alt="image info"></p>
+<p>Pada contoh di atas, kita menggunakan package <code>regexp</code> dan membuat sebuah variabel <code>r</code> yang merupakan hasil dari kompilasi pola regex <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">p([a-z]&#43;)ch</code>.</p>
+<p>Selanjutnya, kita menggunakan fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">FindString</code> untuk mencari string yang cocok dengan pola tersebut pada string <code>&quot;peach punch&quot;</code> dan <code>&quot;&quot;The quick brown fox jumps over the lazy dog&quot;&quot;</code>.</p>
+<p>Hasilnya adalah <code>&quot;peach&quot;</code> dan <code>&quot;&quot;</code> (karena tidak ada yang cocok).</p>
+<blockquote>
+<p>Kenapa hasilnya <code>&quot;peach&quot;</code>, bukan <code>&quot;peach punch&quot;</code>? itu karena function <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">FindString</code> mengembalikan string pertama yang ditemukan, karena string <code>&quot;peach&quot;</code> ditemukan terlebih dahulu, maka value tersebut yang dikembalikan.</p>
+</blockquote>
+<p>Kemudian, kita juga menggunakan fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">MatchString</code> untuk mencocokkan seluruh string pada string <code>&quot;peach punch&quot;</code>.</p>
+<p>Hasilnya adalah true karena string tersebut cocok dengan pola regex yang diberikan.</p>
+<p>Selain itu, Go juga memiliki beberapa fungsi lain yang dapat digunakan dalam pengolahan regex seperti <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">ReplaceAllString</code> dan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Split</code>.</p>
+<h3 id="replaceallstring">ReplaceAllString</h3>
+<p>Fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">ReplaceAllString</code> digunakan untuk mengganti setiap substring yang cocok dengan pola regex dengan string lain.</p>
+<p>Berikut adalah contoh penggunaannya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;regexp&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>   polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`\bdia\b|\bDia\b`</span>)
+</span></span><span style="display:flex;"><span>   teks <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;Dia pergi ke pasar dan membeli beberapa barang.&#34;</span>
+</span></span><span style="display:flex;"><span>   teksBaru <span style="color:#ff79c6">:=</span> polaRegex.<span style="color:#50fa7b">ReplaceAllString</span>(teks, <span style="color:#f1fa8c">&#34;saya&#34;</span>)
+</span></span><span style="display:flex;"><span>   fmt.<span style="color:#50fa7b">Println</span>(teksBaru)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Berikut hasil eksekusi kode diatas:
+<img src="/032-regex/pict3.jpeg" alt="image info"></p>
+<p>Pada contoh diatas pola regex <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">\bdia\b</code> akan mencocokkan setiap kata <code>&quot;dia&quot;</code> (tidak diikuti atau diawali oleh huruf lain) dan fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">ReplaceAllString()</code> akan mengganti setiap substring yang cocok dengan pola regex tersebut dengan string <code>&quot;saya&quot;</code>.</p>
+<h3 id="split">Split</h3>
+<p>Fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Split()</code> digunakan untuk memisahkan sebuah string menjadi beberapa substring berdasarkan pola regex.</p>
+<p>Berikut contohnya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> (
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;regexp&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>   polaRegex <span style="color:#ff79c6">:=</span> regexp.<span style="color:#50fa7b">MustCompile</span>(<span style="color:#f1fa8c">`[\s,;]+`</span>)
+</span></span><span style="display:flex;"><span>   teks <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;Ini adalah beberapa, teks; untuk di-split.&#34;</span>
+</span></span><span style="display:flex;"><span>   hasilSplit <span style="color:#ff79c6">:=</span> polaRegex.<span style="color:#50fa7b">Split</span>(teks, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">for</span> _, substring <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> hasilSplit {
+</span></span><span style="display:flex;"><span>      fmt.<span style="color:#50fa7b">Println</span>(substring)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Berikut hasil eksekusi kode diatas:
+<img src="/032-regex/pict4.jpeg" alt="image info"></p>
+<p>Pada contoh diatas pola regex <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">[\s,;]&#43;</code> akan mencocokkan setiap karakter spasi, koma, atau titik koma yang muncul satu kali atau lebih.</p>
+<p>Fungsi <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">Split()</code> akan memisahkan teks menjadi beberapa substring berdasarkan pola regex tersebut, dan mengembalikan hasil split dalam bentuk array slice yang dapat diiterasi dengan <code style=" border: 1px solid #d3dce6;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 2px;">for loop</code>.</p>
+<h3 id="apa-selanjutnya">Apa selanjutnya?</h3>
+<p>Selanjutnya kita akan belajar mengenai WaitGroup pada Golang</p>
+<p>Happy learning! 😆</p>
+
+
+
+  </article>
+  
+<div id="disqus_thread" class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sekolahbackend" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+
+
+
+
+  
+
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    © 2023 - Sekolah Backend · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://sekolahbackend.com/js/scripts.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHS37TD15T"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-SHS37TD15T', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+<script>
+  const languageMenuButton = document.querySelector('.language-switcher');
+  const languageDropdown = document.querySelector('.language-dropdown');
+  languageMenuButton.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    if (languageDropdown.classList.contains('hidden')) {
+      languageDropdown.classList.remove('hidden')
+      languageDropdown.classList.add('flex')
+    } else {
+      languageDropdown.classList.add('hidden');
+      languageDropdown.classList.remove('flex');
+    }
+  })
+</script>
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835360644807443"
+     crossorigin="anonymous"></script>
+</body>
+</html>

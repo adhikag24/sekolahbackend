@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Sekolah Backend</title>
-    <link>https://sekolahbackend.web.app/id/blog/</link>
+    <link>https://sekolahbackend.com/id/blog/</link>
     <description>Recent content in Blog on Sekolah Backend</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 10 Apr 2023 19:52:42 +0700</lastBuildDate><atom:link href="https://sekolahbackend.web.app/id/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jun 2023 20:24:17 +0700</lastBuildDate><atom:link href="https://sekolahbackend.com/id/blog/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
